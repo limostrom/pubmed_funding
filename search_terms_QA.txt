@@ -1,0 +1,2 @@
+Query_Name	Query
+journalarticle_QA	("Journal Article"[Publication Type]) AND ("N Engl J Med"[Journal] OR "Lancet"[Journal] OR "JAMA"[Journal] OR "J Am Med Assoc"[Journal] OR "Nature"[Journal] OR "Science"[Journal] OR "Cell"[Journal] OR "BMJ"[Journal] OR "Br Med J"[Journal] OR "Br Med J (Clin Res Ed)"[Journal])
