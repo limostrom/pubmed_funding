@@ -11,9 +11,9 @@ pause on
 
 local qa_prep 0
 local notqa_prep 0
-local qa_append 1
-local notqa_append 1
-local tab_funders 0
+local qa_append 0
+local notqa_append 0
+local tab_funders 1
 
 cap cd "C:/Users/17036/Dropbox/pubmed_funding/Data/PubMed/"
 cap cd "C:/Users/lmostrom/Dropbox/pubmed_funding/Data/PubMed/"
@@ -78,7 +78,7 @@ replace pmid = pmid + ")"
 ren pmid query
 drop top peak
 
-export excel using "WoS_Queries_notQA.xlsx", replace
+export excel using "../WoS_Queries_notQA.xlsx", replace
 }
 *%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 cd ../WebOfScience
