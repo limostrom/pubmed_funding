@@ -15,8 +15,7 @@ local qa_append 0
 local notqa_append 0
 local tab_funders 1
 
-cap cd "C:/Users/17036/Dropbox/pubmed_funding/Data/PubMed/"
-cap cd "C:/Users/lmostrom/Dropbox/pubmed_funding/Data/PubMed/"
+cd Data/PubMed
 
 *-------------------------------------------------------------------------------
 *First, QA list
@@ -857,3 +856,4 @@ foreach QA_not in "QA" "notQA" {
 
 	
 }
+cd ../../
