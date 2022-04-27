@@ -54,7 +54,7 @@ tw (scatter pubsCorp2010 pubsNIH2010 if !ct, mc(white) mlab(disease) mlabp(12) m
    (scatter pubsCorp2010 pubsNIH2010 if !ct [w=valUSA2010], msym("Oh") mc(black)),
  legend(off) xti("NIH-Funded (2010-2019)") yti("Corporate-Funded (2010-2019)")
  ti("Publications in All Disease Groups" "Weighted by US Disease Burden")
- subti("r=`r'")
+ subti("r=`r'") xlab(#4) ylab(#4)
  note("Correlation excluding Neoplasms: `r_exNeo'"
 		"Circle size weighted by disease burden in the US (in DALYs)");
 	
@@ -90,7 +90,7 @@ tw (scatter pubsCorp2010 pubsNIH2010 if !ct, mc(white) mlab(disease) mlabp(12) m
    (scatter pubsCorp2010 pubsNIH2010 if !ct [w=valGlobal2010], msym("Oh") mc(black)),
  legend(off) xti("NIH-Funded (2010-2019)") yti("Corporate-Funded (2010-2019)")
  ti("Publications in All Disease Groups" "Weighted by Global Disease Burden")
- subti("r=`r'")
+ subti("r=`r'") xlab(#4) ylab(#4)
  note("Correlation excluding Neoplasms: `r_exNeo'"
 		"Circle size weighted by disease burden in the US (in DALYs)");
 	
@@ -112,7 +112,7 @@ tw (scatter pubsCorp2010 pubsNIH2010 if ct, mc(white) mlab(disease) mlabp(3) mla
    (scatter pubsCorp2010 pubsNIH2010 if ct [w=valGlobal2010], msym("Oh") mc(black)),
  legend(off) xti("NIH-Funded (2010-2019)") yti("Corporate-Funded (2010-2019)")
  ti("Clinical Trials in All Disease Groups" "Weighted by Global Disease Burden")
- subti("r=`r'")
+ subti("r=`r'") xlab(#4) ylab(#4)
  note("Correlation excluding Neoplasms: `r_exNeo'"
 		"Circle size weighted by disease burden in the US (in DALYs)");
 	

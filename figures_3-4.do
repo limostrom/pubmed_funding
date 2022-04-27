@@ -41,7 +41,7 @@ tw (scatter pubsCorp2010 pubsNIH2000 if !ct & hl_ratio >= `split',
  legend(off) xti("NIH-Funded (2000-2009)") yti("Corporate-Funded (2010-2019)")
  ti("Publications About Diseases that Disproportionately"
 	"Impact High SDI Countries or are SDI-Neutral")
- subti("r=`r'")
+ subti("r=`r'") xlab(#4) ylab(#4)
  note("Cutoff for Ratio of High SDI/Low SDI Disease Burden: `split'"
 		"Correlation excluding Neoplasms: `r_exNeo'"
 		"Circle size weighted by disease burden in the US (in DALYs)");
@@ -69,7 +69,7 @@ tw (scatter pubsCorp2010 pubsNIH2000 if ct & hl_ratio >= `split',
  legend(off) xti("NIH-Funded (2000-2009)") yti("Corporate-Funded (2010-2019)")
  ti("Clinical Trials About Diseases that Disproportionately"
 	"Impact High SDI Countries or are SDI-Neutral")
- subti("r=`r'")
+ subti("r=`r'") xlab(#4) ylab(#4)
  note("Cutoff for Ratio of High SDI/Low SDI Disease Burden: `split'"
 		"Correlation excluding Neoplasms: `r_exNeo'"
 		"Circle size weighted by disease burden in the US (in DALYs)");
@@ -97,10 +97,6 @@ foreach xy in "Y" "X" {
 corr pubsCorp2010 pubsNIH2000 [w=valGlobal2000] if !ct & hl_ratio < `split'
 	local r = r(C)[2,1]
 	local r = substr("`r'", 1, 4)
-corr pubsCorp2010 pubsNIH2000 [w=valGlobal2000] if !ct ///
-		& dis_abbr != "Neoplasms" & hl_ratio < `split'
-	local r_exNeo = r(C)[2,1]
-	local r_exNeo = substr("`r_exNeo'", 1, 4)
 
 	
 #delimit ;
@@ -114,7 +110,6 @@ tw (scatter pubsCorp2010 pubsNIH2000 if !ct & hl_ratio < `split',
 	"Disproportionately Impact Low SDI Countries")
  subti("r=`r'")
  note("Cutoff for Ratio of High SDI/Low SDI Disease Burden: `split'"
-		"Correlation excluding Neoplasms: `r_exNeo'"
 		"Circle size weighted by disease burden in the US (in DALYs)");
 	
 graph export "Output/fig4a-pubs_corr_LowSDI_wGlobal.png", replace
